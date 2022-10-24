@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Filipe Fernandes">
+  <title>Meu produto está pronto, e agora?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #2a211c;
+        color: #bdae9d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #bdae9d; background-color: #2a211c; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffff00; } /* Alert */
+    code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #44aa43; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #049b0a; } /* Char */
+    code span.cn { } /* Constant */
+    code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+    code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+    code span.dt { text-decoration: underline; } /* DataType */
+    code span.dv { color: #44aa43; } /* DecVal */
+    code span.er { color: #ffff00; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #44aa43; } /* Float */
+    code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+    code span.op { } /* Operator */
+    code span.pp { font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #049b0a; } /* SpecialChar */
+    code span.ss { color: #049b0a; } /* SpecialString */
+    code span.st { color: #049b0a; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #049b0a; } /* VerbatimString */
+    code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="slides.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Meu produto está pronto, e agora?</h1>
+  <p class="subtitle">Empacotando e distribuindo Software para
+Computação Científica</p>
+  <p class="author">Filipe Fernandes</p>
+  <p class="date">Oct 27, 2022</p>
+</section>
+
+<section id="o-que-é-cultura" class="slide level1">
+<h1>O que é cultura?</h1>
+<p>É uma rede de compartilhamento de símbolos, significados e valores de
+um grupo ou sociedade. São formados artificialmente pelos humanos, de
+uma maneira <strong>não natural</strong> ao longo de seu
+<strong>desenvolvimento</strong>.</p>
+<div class="fragment">
+<p>Logo, por definição, precisamos saber a <strong>origem</strong> e
+<strong>estória</strong> de cada um para entender sua cultura.</p>
+</div>
+</section>
+<section id="aviso" class="slide level1">
+<h1>Aviso</h1>
+<p>Bom, isso foi uma forma longa de dizer que tudo nessa apresentação
+terá opiniões, e não necessariamente é a solução para todos os
+problemas.</p>
+</section>
+<section id="minha-origem-e-estória" class="slide level1">
+<h1>Minha origem e estória</h1>
+<ul>
+<li class="fragment">Oceanógrafo, mestre em Oc. Física, <em>PhD
+dropout</em>.</li>
+<li class="fragment">Comecei com Fortran/Matlab, e como todo
+pesquisador, meu desafio número 2 era compilar/instalar Software.</li>
+<li class="fragment">Inevitavelmente acabei me tornando o “empacotador”
+do lab.</li>
+</ul>
+<div class="fragment">
+<p>Hoje sou <em>developer advocate</em> da National Oceanic and
+Atmospheric Administration (NOAA) no time do Integrated Ocean Observing
+System (IOOS).</p>
+</div>
+</section>
+<section id="como-cheguei-aqui" class="slide level1">
+<h1>Como cheguei aqui?</h1>
+<p>Em computação científica ou você morre resolvendo bugs* em código
+legado ou vive o suficiente para se tornar empacotador.</p>
+<p>* que você mesmo criou.</p>
+</section>
+<section id="mas-o-que-é-um-pacote-científico-python"
+class="slide level1">
+<h1>Mas o que é um “pacote científico (Python)?”</h1>
+<p><img data-src="images/wonderful-01.jpg" /></p>
+</section>
+<section id="nenhuma-solução-abrange-80-dos-problemas"
+class="slide level1">
+<h1>Nenhuma solução abrange +80% dos problemas</h1>
+<p>Uma breve revisão de empacotamento em Python.</p>
+<ul>
+<li class="fragment">Python egg (2004-2012): “binário”, zip do código
+fonte, multi-plataforma (“importable”).</li>
+<li class="fragment">Python sdist (?-hoje): evolução do egg, ainda
+apenas código fonte*.</li>
+<li class="fragment">Pacotes conda (2012-hoje): instaláveis pelo
+gerenciador de pacote agnóstico* conda.</li>
+<li class="fragment">Python wheels (2012-hoje): PEP 427, distribuição
+binária com código compilado.</li>
+</ul>
+</section>
+<section id="conda-vs-wheels-parte-1" class="slide level1">
+<h1>conda vs wheels parte 1</h1>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 45%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>conda</th>
+<th>wheels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>solver</td>
+<td>primeira versão</td>
+<td>no pip ~2020</td>
+</tr>
+<tr class="even">
+<td>shared libs</td>
+<td>são dependências</td>
+<td>são “bundled” *</td>
+</tr>
+<tr class="odd">
+<td>gerencia</td>
+<td>qualquer pacote até mesmo Python</td>
+<td>apenas pacotes Python *</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cmake" class="slide level1">
+<h1>cmake</h1>
+<p><img data-src="images/pypi-cmake.png" /></p>
+</section>
+<section id="llvm" class="slide level1">
+<h1>llvm</h1>
+<p><img data-src="images/pypi-llvm.png" /></p>
+</section>
+<section id="então-usar-pip-é-um-desperdício-de-espaço"
+class="slide level1">
+<h1>Então usar pip é um desperdício de espaço?</h1>
+<pre class="shell"><code>conda create --name CONDA python=3.10 rasterio fiona pyproj geopandas shapely rtree netcdf4 h5py h5netcdf</code></pre>
+<pre><code>conda create --name PIP python=3.10 pip &amp;&amp; conda activate PIP
+pip install rasterio fiona pyproj geopandas shapely rtree netcdf4 h5py h5netcdf</code></pre>
+<div class="fragment">
+<pre><code>du -skch *
+938M    CONDA
+393M    PIP</code></pre>
+</div>
+</section>
+<section id="então-o-bundle-não-é-tão-ruim-assim" class="slide level1">
+<h1>Então o “bundle” não é tão ruim assim?</h1>
+<p><img data-src="images/wheel-compat.png" /></p>
+</section>
+<section id="fazendo-uma-dieta" class="slide level1">
+<h1>Fazendo uma dieta</h1>
+<pre><code>micromamba/envs/PIP via 🅒 CLI 
+❯ lr | grep libgdal
+
+26M Oct 21 14:41 libgdal-f07e835c.so.30.0.3
+29M Oct 21 14:41 libgdal-fe50f3e8.so.31.0.2</code></pre>
+<pre><code>micromamba/envs/PIP via 🅒 CONDA
+❯ lr | grep libgdal
+
+100K Oct 21 14:39 libgdal-3.5.2-h6e88209_4.json
+libgdal.so -&gt; libgdal.so.31.0.2
+libgdal.so.31 -&gt; libgdal.so.31.0.2
+36M Oct 21 14:39 libgdal.so.31.0.2</code></pre>
+</section>
+<section id="now-for-something-completely-different"
+class="slide level1">
+<h1>now for something completely different</h1>
+<p><img data-src="images/wheel_size.jpg" /></p>
+</section>
+<section id="conda-vs-wheels-parte-2" class="slide level1">
+<h1>conda vs wheels parte 2</h1>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 22%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>conda</th>
+<th>wheels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>instala pkg?</td>
+<td>✓</td>
+<td><code>pip</code> ou <code>flit/flit-core</code> ou
+<code>poetry/poetry-core</code> ou <code>hatch/hatchling</code> ou
+<code>pdm</code> ou <code>pipenv</code> ou (insira aqui sua última busca
+do Google)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conda-vs-wheels-parte-3" class="slide level1">
+<h1>conda vs wheels parte 3</h1>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 21%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>conda</th>
+<th>wheels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>envs</td>
+<td>✓</td>
+<td><code>venv</code> ou <code>pyenv</code> ou
+<code>virtualenv</code>+<code>virtualenvwrapper</code> ou
+<code>pipx</code> e/ou alguns dos acima</td>
+</tr>
+<tr class="even">
+<td>empacota?</td>
+<td>✓</td>
+<td><code>build</code> ou <code>setuptools</code> ou <code>pep517</code>
+e/ou <code>packaging</code> e/ou <code>twine</code> e/ou
+<code>audiwheel</code> e/ou alguns dos acima</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conda-vs-wheels-parte-4" class="slide level1">
+<h1>conda vs wheels parte 4</h1>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 36%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>conda</th>
+<th>wheels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>lockfile</td>
+<td>plugin externo</td>
+<td><code>piptools</code> ou <code>pipenv</code> e/ou alguns dos
+acima</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="em-resumo" class="slide level1">
+<h1>Em resumo</h1>
+<p><img data-src="images/One_Ring_Blender_Render.png" /></p>
+</section>
+<section
+id="ok-sou-apenas-um-usuário-que-quer-instalar-e-gerenciar-envs"
+class="slide level1">
+<h1>OK, sou apenas um usuário que quer instalar e gerenciar envs</h1>
+<p><img data-src="images/python_environment.png" /></p>
+</section>
+<section id="escolhas-conda-como-gerenciador-de-pacotes."
+class="slide level1">
+<h1>Escolhas… Conda como gerenciador de pacotes.</h1>
+<ul>
+<li>~80% dos recursos em um único comando</li>
+<li>permite maior flexibilidade em “linkar” pacotes from shared
+libs</li>
+<li>permite a criação da variantes</li>
+<li>pacotes não são responsabilidade do desenvolvedor, mas da
+comunidade</li>
+<li>100% OSS</li>
+<li>comunidade diversa e aberta</li>
+<li>múltiplas empresas envolvidas</li>
+</ul>
+</section>
+<section id="escolhas-conda-como-gerenciador-de-ambientes"
+class="slide level1">
+<h1>Escolhas… Conda como gerenciador de ambientes</h1>
+<ul>
+<li>instala Python e outras linguagens</li>
+<li>não precisa de acesso elevado na máquina</li>
+<li>ambientes são encorajados e reduz a confusão de caminhos e
+variáveis</li>
+<li>ambientes podem ser criados “from history”, arquivo yaml ou
+<em>lockfiles</em></li>
+</ul>
+</section>
+<section id="ok-mas-como-empacotar" class="slide level1">
+<h1>OK, mas como empacotar?</h1>
+<p><a
+href="https://mathspp.com/blog/how-to-create-a-python-package-in-2022">https://mathspp.com/blog/how-to-create-a-python-package-in-2022</a></p>
+<p><img data-src="images/qr-more_resources.png" /></p>
+</section>
+<section id="estórias-5-pesquisadores" class="slide level1">
+<h1>5 estórias, 5 pesquisadores</h1>
+<p><img data-src="images/forest.jpg" /></p>
+</section>
+<section id="nossos-pesquisadores" class="slide level1">
+<h1>Nossos pesquisadores</h1>
+<ul>
+<li class="fragment">Angela: meteorologista, especialista em “Convective
+Available Potential Energy”, Fortran.</li>
+<li class="fragment">Marco: aprendeu Rust depois de se formar e anda com
+o livro “re-escreva tudo em Rust” debaixo do braço.</li>
+<li class="fragment">Anderson: HTML/JS/npm, faz módulos para
+Jupyter/JupyterLab nas horas vagas.</li>
+<li class="fragment">Paula: matemática, <em>expert</em> em Julia, ajuda
+a Angela em um projeto de compressão de dados.</li>
+<li class="fragment">Tália: aluna de graduação, aprendendo Python,
+precisa ler os dados da Paula para seu TCC.</li>
+</ul>
+</section>
+<section id="angela" class="slide level1">
+<h1>Angela</h1>
+<ul>
+<li class="fragment">Missão: Calcular CAPE Convective Available
+Potential Energy.</li>
+<li class="fragment">Código: Pronto, em Fortran, padrão testado e
+publicado.</li>
+<li class="fragment">Operação: Rodar o CAPE em resultados de modelo
+numéricos que carrega pelo <code>xarray</code>.</li>
+<li class="fragment">Dificuldade: Interoperabilidade entre
+Python-Fortran .</li>
+</ul>
+<div class="fragment">
+<p>Solução: <code>numpy.distutils.fcompiler</code> +
+<code>conda</code></p>
+</div>
+</section>
+<section id="setup.py-is-dead-vida-longa-ao-setup.py"
+class="slide level1">
+<h1>setup.py is dead, vida longa ao setup.py</h1>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.distutils.core <span class="im">import</span> setup, Extension</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.distutils.fcompiler <span class="im">import</span> get_default_fcompiler, CompilerNotFound</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>compiler <span class="op">=</span> get_default_fcompiler()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>f90flags <span class="op">=</span> []</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> compiler <span class="op">==</span> <span class="st">&#39;gnu95&#39;</span>:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    f90flags.append(<span class="st">&#39;-ffree-form&#39;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">&#39;stdheight_2D_model_lev&#39;</span>, <span class="st">&#39;stdheight_2D_pressure_lev&#39;</span>]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> _mk_sources(name):</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="ss">f&#39;src/xcape/fortran/</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">.pyf&#39;</span>, <span class="ss">f&#39;src/xcape/fortran/</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">.f90&#39;</span>]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ext_modules <span class="op">=</span> [Extension(name<span class="op">=</span><span class="st">&#39;fortran.&#39;</span> <span class="op">+</span> name, sources<span class="op">=</span>_mk_sources(name),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>extra_f90_compile_args<span class="op">=</span>f90flags, f2py_options<span class="op">=</span>[<span class="st">&#39;--quiet&#39;</span>])</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> extensions]</span></code></pre></div>
+</section>
+<section id="empacotando-tudo" class="slide level1">
+<h1>Empacotando tudo</h1>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">requirements</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at">{ compiler(</span><span class="st">&#39;fortran&#39;</span><span class="at">) </span><span class="kw">}</span><span class="at">}</span><span class="co">  # [not win]</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at">{ compiler(</span><span class="st">&#39;m2w64_fortran&#39;</span><span class="at">) </span><span class="kw">}</span><span class="at">}</span><span class="co">  # [win]</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">host</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> pip</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> numpy</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> xarray &gt;=0.14.1</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> dask</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at">{ pin_compatible(</span><span class="st">&#39;numpy&#39;</span><span class="at">) </span><span class="kw">}</span><span class="at">}</span></span></code></pre></div>
+</section>
+<section id="oldest-supported-numpy" class="slide level1">
+<h1>oldest-supported-numpy</h1>
+<p><img data-src="images/pypi-oldest-supported-numpy.png" /></p>
+</section>
+<section id="marco" class="slide level1">
+<h1>Marco</h1>
+<ul>
+<li class="fragment">Missão: Calcular o MinHash de assinaturas de
+DNA</li>
+<li class="fragment">Código: Reescreveu o Fortran original em Rust.</li>
+<li class="fragment">Operação: Distribuir um binário para centenas de
+geneticistas alérgicos a computador.</li>
+<li class="fragment">Dificuldade: Compilar e distribuir um código
+Rust+Python.</li>
+</ul>
+<div class="fragment">
+<p>Solução: <code>cffi+milksnake</code> + <code>conda</code></p>
+</div>
+</section>
+<section id="cffimilksnake-para-o-salvamento" class="slide level1">
+<h1>cffi+milksnake para o salvamento</h1>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> setuptools <span class="im">import</span> setup, find_packages</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_native(spec):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    build <span class="op">=</span> spec.add_external_build(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        cmd<span class="op">=</span>[<span class="st">&#39;cargo&#39;</span>, <span class="st">&#39;build&#39;</span>, <span class="st">&#39;--release&#39;</span>],</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        path<span class="op">=</span><span class="st">&#39;./rust&#39;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    spec.add_cffi_module(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        module_path<span class="op">=</span><span class="st">&#39;example._native&#39;</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        dylib<span class="op">=</span><span class="kw">lambda</span>: build.find_dylib(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>          <span class="st">&#39;example&#39;</span>, in_path<span class="op">=</span><span class="st">&#39;target/release&#39;</span>),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        header_filename<span class="op">=</span><span class="st">&#39;include/example.h&#39;</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        rtld_flags<span class="op">=</span>[<span class="st">&#39;NOW&#39;</span>, <span class="st">&#39;NODELETE&#39;</span>]</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+</section>
+<section id="setup" class="slide level1">
+<h1>Setup</h1>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>setup(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">&#39;example&#39;</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    packages<span class="op">=</span>find_packages(),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    include_package_data<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    setup_requires<span class="op">=</span>[<span class="st">&#39;milksnake&#39;</span>],</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    install_requires<span class="op">=</span>[<span class="st">&#39;milksnake&#39;</span>],</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    milksnake_tasks<span class="op">=</span>[build_native],</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</section>
+<section id="empacotando-tudo-1" class="slide level1">
+<h1>Empacotando tudo</h1>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">requirements</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> cffi</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="kw">{</span><span class="at">{ compiler(</span><span class="st">&#39;rust&#39;</span><span class="at">) </span><span class="kw">}</span><span class="at">} &gt;=1.48.0</span></span></code></pre></div>
+</section>
+<section id="anderson" class="slide level1">
+<h1>Anderson</h1>
+<ul>
+<li class="fragment">Missão: Ajudar o pessoal do lab com a extensão
+“favorite folders” para o JupyterLab.</li>
+<li class="fragment">Código: Uma extensão para o JupyterLab super útil
+mas requer comandos extras (npm) para instalar após o
+<code>pip install</code>.</li>
+<li class="fragment">Operação: Facilitar a instalação dessa
+extensão.</li>
+<li class="fragment">Dificuldade: A extensão depende de outro
+gerenciador de pacotes, o npm, para finalizar a instalação.</li>
+</ul>
+</section>
+<section id="para-o-conda-o-npm-é-só-outro-pacote" class="slide level1">
+<h1>para o conda o npm é só outro pacote</h1>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">requirements</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">host</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> nodejs &gt;=12.0.0</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python &gt;=3.6</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> pip</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> jupyterlab &gt;=3.0.0</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> jupyter-packaging &gt;=0.7.9,&lt;0.8.0</span></span></code></pre></div>
+</section>
+<section id="recapitulando" class="slide level1">
+<h1>Recapitulando</h1>
+<p>Usamos o conda para,</p>
+<ul>
+<li class="fragment">compilador Fortran
+(<code>numpy.distutils.fcompiler</code>)</li>
+<li class="fragment">compilador Rust
+(<code>cffi</code>+<code>milksnake</code>)</li>
+<li class="fragment">outro gerenciador de pacotes
+(<code>npm</code>)</li>
+</ul>
+<div class="fragment">
+<p>e criamos pacotes binários instaláveis pelo conda. Tudo isso é
+possível no formato wheels com <code>cibuildwheels</code> ou
+<code>multibuild</code>.</p>
+</div>
+<div class="fragment">
+<p>Mas esquecemos da Paula e da Tália!</p>
+</div>
+</section>
+<section id="paula" class="slide level1">
+<h1>Paula</h1>
+<ul>
+<li class="fragment">Missão: Comprimir terabytes de resultados de
+modelos atmosféricos.</li>
+<li class="fragment">Código: Paper e código fonte publicados na Nature
+computational Science em… <code>Julia</code>!</li>
+<li class="fragment">Operação: Aplicar essa compressão de dados em seus
+modelos pela <code>xarray</code>.</li>
+<li class="fragment">Dificuldade: Depender de outra linguagem no
+<em>runtime</em>!</li>
+</ul>
+</section>
+<section id="julia-é-só-outro-pacote-para-o-conda" class="slide level1">
+<h1>Julia é só outro pacote para o conda</h1>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">requirements</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python &gt;=3.8</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> xarray</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> pyjulia &gt;=0.5.7</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> julia &gt;=1.6.0,&lt;1.8.0</span></span></code></pre></div>
+</section>
+<section id="do-outro-lado-do-python" class="slide level1">
+<h1>Do outro lado do (Python)</h1>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> .julia_helpers <span class="im">import</span> install</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>already_ran <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> already_ran:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    already_ran <span class="op">=</span> install(quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>jl <span class="op">=</span> Julia(compiled_modules<span class="op">=</span><span class="va">False</span>, debug<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> julia <span class="im">import</span> Main</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>path_to_julia_functions <span class="op">=</span> os.path.join(</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    os.path.dirname(<span class="va">__file__</span>), <span class="st">&quot;bitinformation_wrapper.jl&quot;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>Main.path <span class="op">=</span> path_to_julia_functions</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>jl.using(<span class="st">&quot;BitInformation&quot;</span>)</span></code></pre></div>
+</section>
+<section id="tália" class="slide level1">
+<h1>Tália</h1>
+<ul>
+<li class="fragment">Missão: Ler os terabytes de resultados de modelos
+atmosféricos da Paula.</li>
+<li class="fragment">Código: Aprendendo Python mas precisa do
+<code>nco</code>, ferramenta não-python oficial do IPCC</li>
+<li class="fragment">Operação: Usar o <code>nco</code> de dentro do
+Python para não sair da zona de conforto, <code>pynco</code>.</li>
+<li class="fragment">Dificuldade: Instalar um pacote CLI C/C++ que será
+chamado pelo <code>pynco</code>.</li>
+</ul>
+</section>
+<section id="nco-é-só-outro-pacote-para-o-conda" class="slide level1">
+<h1>nco é só outro pacote para o conda</h1>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">requirements</span><span class="kw">:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">host</span><span class="kw">:</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python &gt;=3.6</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> pip</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">run</span><span class="kw">:</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> python &gt;=3.6</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> nco</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> numpy</span></span></code></pre></div>
+</section>
+<section id="to-the-moon-web" class="slide level1">
+<h1>To the <del>moon</del> Web</h1>
+<p><a
+href="https://github.com/ocefpaf/ioos_qc_webapp">https://github.com/ocefpaf/ioos_qc_webapp</a></p>
+<p><img data-src="images/qr-ioos_qc_webapp.png" /></p>
+</section>
+<section id="and-back" class="slide level1">
+<h1>and back</h1>
+<p><a
+href="https://github.com/ocean-data-qc/ocean-data-qc">https://github.com/ocean-data-qc/ocean-data-qc</a></p>
+<p><img data-src="images/qr-atlantOS.png" /></p>
+</section>
+<section id="boas-práticas-core-comum" class="slide level1">
+<h1>Boas práticas: Core comum</h1>
+<p><a
+href="https://github.com/TEOS-10/GSW-C">https://github.com/TEOS-10/GSW-C</a></p>
+<p><img data-src="images/qr-gsw-python-wheel.png" /></p>
+</section>
+<section id="boas-práticas-gerenciado-apps-com-conda-lock"
+class="slide level1">
+<h1>Boas práticas: gerenciado apps com conda-lock</h1>
+<p><img data-src="images/conda-lock.png" /></p>
+<p><a
+href="https://github.com/pangeo-data/pangeo-docker-images/pull/235">Image
+from PR 235</a>.</p>
+</section>
+<section id="perguntas" class="slide level1">
+<h1>Perguntas?</h1>
+<p>(How To Make Package Managers Cry)</p>
+<p><a
+href="https://www.youtube.com/watch?v=NSemlYagjIU">https://www.youtube.com/watch?v=NSemlYagjIU</a></p>
+<p><img data-src="images/qr-youtube-pkg.png" /></p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
